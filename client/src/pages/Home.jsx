@@ -4,11 +4,12 @@ import IndexCards from "../components/IndexCards";
 const Home = () => {
   return (
     <>
-      <div>
+
+      <div className="d-flex gap-3 mb-4">
+      </div>
         <Subjects />
         <hr />
         <IndexCards />
-      </div>
     </>
   );
 };

@@ -13,7 +13,7 @@ const cache = new InMemoryCache({
             return incoming;
           },
         },
-        projects: {
+        indexCards: {
           merge(existing, incoming) {
             return incoming;
           },
