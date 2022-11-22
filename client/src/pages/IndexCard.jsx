@@ -1,7 +1,7 @@
-import { useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import SubjectInfo from "../components/SubjectInfo";
+import { useQuery } from "@apollo/client";
 import { GET_INDEX_CARD } from "../queries/indexCardQueries";
 
 const IndexCard = () => {
