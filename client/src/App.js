@@ -3,6 +3,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import "./App.css";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import IndexCard from "./pages/IndexCard";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -33,10 +35,11 @@ const App = () => {
     <>
       <ApolloProvider client={client}>
         <Router>
+        <Header />
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-
+              <Route path="/indexCards/:id" element={<IndexCard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
