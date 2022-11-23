@@ -8,11 +8,14 @@ So that I can increase my retention and improve upon testing scores and capabili
 
 Acceptance Criteria
 
-
-
-
 Basic Overview and App Needs
-1. App that allows the user to save study information on digital index cards so they can study for the exams.
+1. App that allows the user to save study information on digital index cards so they can study for their exams.
 2. Ability to mark a note with a status - 'No clue', 'Somewhat got', 'In the bag'
 3. Color coding the index cards according to the status. No clue = 'red', Somewhat get = 'yellow', In the bag = 'green'.
-4. Have a page dedicated to the subject which contains all the index cards.
+4. Have a page dedicated to the subject which contains all the index cards for that subject.
+5. Make cards draggable so they can be organized in the way the user would like.
+
+Nice to haves - Future Development
+1. Potentially incorporate a timer feature so the user can set a window of time they would like to study for.
+2. Keep track of how much time a user studies per week to help them know how much time they've put into their studies.
+3. 

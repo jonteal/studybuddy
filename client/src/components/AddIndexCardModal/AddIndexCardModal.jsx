@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { FaList } from 'react-icons/fa';
-import { GET_INDEX_CARDS } from "../queries/indexCardQueries";
-import { GET_SUBJECTS } from "../queries/subjectQueries";
-import { ADD_INDEX_CARD} from '../mutations/indexCardMutations';
+import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
+import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
+import { ADD_INDEX_CARD} from '../../graphql/mutations/indexCardMutations';
+
+import './addIndexCardModal.css';
 
 const AddIndexCardModal = () => {
   const [title, setTitle] = useState('');
@@ -53,9 +55,9 @@ const AddIndexCardModal = () => {
           data-bs-toggle="modal"
           data-bs-target="#addIndexCardModal"
         >
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center ">
             <FaList className="icon" />
-            <div>New Index Card</div>
+            <div className="add-index-btn-label">New Index Card</div>
           </div>
         </button>
 

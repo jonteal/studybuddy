@@ -1,7 +1,9 @@
 import { useQuery } from "@apollo/client"
-import { GET_SUBJECTS } from '../queries/subjectQueries';
-import SubjectRow from "./SubjectRow";
-import Spinner from "./Spinner";
+import { GET_SUBJECTS } from '../../graphql/queries/subjectQueries';
+import SubjectRow from "../SubjectRow/SubjectRow";
+import Spinner from "../Spinner/Spinner";
+
+import './subjects.css';
 
 const Subjects = () => {
   const { loading, error, data } = useQuery(GET_SUBJECTS);

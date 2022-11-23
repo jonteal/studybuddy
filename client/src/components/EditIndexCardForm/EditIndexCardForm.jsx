@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { UPDATE_INDEX_CARD } from "../mutations/indexCardMutations";
-import { GET_INDEX_CARD } from "../queries/indexCardQueries";
+import { UPDATE_INDEX_CARD } from "../../graphql/mutations/indexCardMutations";
+import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
+
+import './editIndexCardForm.css';
 
 const EditIndexCardForm = ({ indexCard }) => {
   const [title, setTitle] = useState(indexCard.title);

@@ -1,7 +1,9 @@
-import Spinner from "./Spinner";
-import IndexCardComponent from "./IndexCardComponent/IndexCardComponent";
+import Spinner from "../Spinner/Spinner";
+import IndexCardComponent from "../IndexCardComponent/IndexCardComponent";
 import { useQuery } from "@apollo/client";
-import { GET_INDEX_CARDS } from '../queries/indexCardQueries';
+import { GET_INDEX_CARDS } from '../../graphql/queries/indexCardQueries';
+
+import './indexCards.css';
 
 const IndexCards = () => {
   const { loading, error, data } = useQuery(GET_INDEX_CARDS);

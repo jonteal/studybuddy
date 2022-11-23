@@ -1,5 +1,7 @@
 import { FaBookReader } from 'react-icons/fa';
 
+import './subjectInfo.css';
+
 const SubjectInfo = ({ subject }) => {
   return (
     <>

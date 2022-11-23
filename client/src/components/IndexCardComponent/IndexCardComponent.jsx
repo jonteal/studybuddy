@@ -14,7 +14,7 @@ const IndexCardComponent = ({ indexCard }) => {
           </div>
           <p>{indexCard.description.substring(0, 75)}...</p>
           <p className="small">
-            Status: <strong>{indexCard.status}</strong>
+            Confidence: <strong>{indexCard.status}</strong>
           </p>
         </div>
         </a>

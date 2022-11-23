@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import {FaBookReader} from 'react-icons/fa';
 import { useMutation } from '@apollo/client';
-import { ADD_SUBJECT } from '../mutations/subjectMutations';
-import { GET_SUBJECTS } from '../queries/subjectQueries';
+import { ADD_SUBJECT } from '../../graphql/mutations/subjectMutations';
+import { GET_SUBJECTS } from '../../graphql/queries/subjectQueries';
+
+import './addSubjectModal.css';
 
 const AddSubjectModal = () => {
   const [name, setName] = useState('');
@@ -41,7 +43,7 @@ const AddSubjectModal = () => {
       >
         <div className="d-flex align-items-center">
           <FaBookReader className="icon" />
-          <div>Add Subject</div>
+          <div className='add-subject-btn-label'>Add Subject</div>
         </div>
       </button>
 

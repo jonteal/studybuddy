@@ -1,8 +1,10 @@
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
-import { DELETE_SUBJECT } from "../mutations/subjectMutations";
-import { GET_SUBJECTS } from "../queries/subjectQueries";
-import { GET_INDEX_CARDS } from "../queries/indexCardQueries";
+import { DELETE_SUBJECT } from "../../graphql/mutations/subjectMutations";
+import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
+import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
+
+import './subjectRow.css';
 
 const SubjectRow = ({ subject }) => {
   const [deleteSubject] = useMutation(DELETE_SUBJECT, {

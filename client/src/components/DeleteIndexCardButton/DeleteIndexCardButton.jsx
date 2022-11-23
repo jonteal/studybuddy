@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import { FaTrash } from 'react-icons/fa';
 
-import { GET_INDEX_CARDS } from "../queries/indexCardQueries";
+import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import { useMutation } from "@apollo/client";
-import { DELETE_INDEX_CARD } from "../mutations/indexCardMutations";
+import { DELETE_INDEX_CARD } from "../../graphql/mutations/indexCardMutations";
+
+import './deleteIndexCardButton.css';
 
 const DeleteIndexCardButton = ({ indexCardId }) => {
 

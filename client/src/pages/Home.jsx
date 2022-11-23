@@ -1,7 +1,7 @@
-import Subjects from "../components/Subjects";
-import IndexCards from "../components/IndexCards";
-import AddSubjectModal from "../components/AddSubjectModal";
-import AddIndexCardModal from "../components/AddIndexCardModal";
+import Subjects from "../components/Subjects/Subjects";
+import IndexCards from "../components/IndexCards/IndexCards";
+import AddSubjectModal from "../components/AddSubjectModal/AddSubjectModal";
+import AddIndexCardModal from "../components/AddIndexCardModal/AddIndexCardModal";
 
 const Home = () => {
   return (

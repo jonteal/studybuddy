@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
-import Spinner from "../components/Spinner";
-import SubjectInfo from "../components/SubjectInfo";
-import EditIndexCardForm from "../components/EditIndexCardForm";
-import DeleteIndexCardButton from "../components/DeleteIndexCardButton";
+import Spinner from "../components/Spinner/Spinner";
+import SubjectInfo from "../components/SubjectInfo/SubjectInfo";
+import EditIndexCardForm from "../components/EditIndexCardForm/EditIndexCardForm";
+import DeleteIndexCardButton from "../components/DeleteIndexCardButton/DeleteIndexCardButton";
 import { useQuery } from "@apollo/client";
-import { GET_INDEX_CARD } from "../queries/indexCardQueries";
+import { GET_INDEX_CARD } from "../graphql/queries/indexCardQueries";
 
 const IndexCard = () => {
   const { id } = useParams();
