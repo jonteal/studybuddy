@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import IndexCard from "./pages/IndexCard";
+import Subject from "./pages/Subject";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -39,6 +40,7 @@ const App = () => {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/subjects/:id" element={<Subject />} />
               <Route path="/indexCards/:id" element={<IndexCard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

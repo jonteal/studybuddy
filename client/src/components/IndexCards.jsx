@@ -9,8 +9,10 @@ const IndexCards = () => {
   if (loading) return <Spinner />
   if (error) return <p>Something went wrong</p>
 
+  console.log('data: ', data);
+
   return (
-    <>
+    <div>
       { data.indexCards.length > 0 ? (
         <div className="row mt-4">
           {data.indexCards.map((indexCard) => (
@@ -19,7 +21,7 @@ const IndexCards = () => {
         </div>
 
       ) : (<p>No index cards right now</p>)}
-    </>
+    </div>
   )
 };
 

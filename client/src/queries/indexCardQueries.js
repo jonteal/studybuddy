@@ -6,6 +6,10 @@ const GET_INDEX_CARDS = gql`
       id
       title
       status 
+      subject {
+        id
+        name
+      }
     }
   }
 `;

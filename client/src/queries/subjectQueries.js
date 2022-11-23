@@ -9,4 +9,13 @@ const GET_SUBJECTS = gql`
   }
 `;
 
-export { GET_SUBJECTS };
+const GET_SUBJECT = gql`
+  query getSubject($id: ID) {
+    subject(id: $id) {
+      id
+      name 
+    }
+  }
+`;
+
+export { GET_SUBJECTS, GET_SUBJECT };
