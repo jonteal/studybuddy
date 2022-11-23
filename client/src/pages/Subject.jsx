@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-import IndexCardComponent from "../components/IndexCardComponent";
+import IndexCardComponent from "../components/IndexCardComponent/IndexCardComponent";
 import AddIndexCardModal from "../components/AddIndexCardModal"
 import Spinner from "../components/Spinner";
 import { useQuery } from "@apollo/client";

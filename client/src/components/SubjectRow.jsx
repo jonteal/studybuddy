@@ -1,4 +1,4 @@
-import { FaTrash, FaEye } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { DELETE_SUBJECT } from "../mutations/subjectMutations";
 import { GET_SUBJECTS } from "../queries/subjectQueries";
@@ -17,12 +17,7 @@ const SubjectRow = ({ subject }) => {
 
   return (
     <tr>
-      <td>{subject.name}</td>
-      <td>
-        <a className="btn btn-light" href={`/subjects/${subject.id}`}>
-          {<FaEye />}
-        </a>
-      </td>
+      <td><a className="btn btn-light" href={`/subjects/${subject.id}`}>{subject.name}</a></td>
       <td>
         <button className="btn btn-danger btn-sm" onClick={deleteSubject}>
           <FaTrash />

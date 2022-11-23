@@ -14,3 +14,5 @@ Acceptance Criteria
 Basic Overview and App Needs
 1. App that allows the user to save study information on digital index cards so they can study for the exams.
 2. Ability to mark a note with a status - 'No clue', 'Somewhat got', 'In the bag'
+3. Color coding the index cards according to the status. No clue = 'red', Somewhat get = 'yellow', In the bag = 'green'.
+4. Have a page dedicated to the subject which contains all the index cards.

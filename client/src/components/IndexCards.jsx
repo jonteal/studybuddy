@@ -1,5 +1,5 @@
 import Spinner from "./Spinner";
-import IndexCardComponent from './IndexCardComponent';
+import IndexCardComponent from "./IndexCardComponent/IndexCardComponent";
 import { useQuery } from "@apollo/client";
 import { GET_INDEX_CARDS } from '../queries/indexCardQueries';
 
@@ -8,8 +8,6 @@ const IndexCards = () => {
 
   if (loading) return <Spinner />
   if (error) return <p>Something went wrong</p>
-
-  console.log('data: ', data);
 
   return (
     <div>

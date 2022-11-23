@@ -5,6 +5,7 @@ const GET_INDEX_CARDS = gql`
     indexCards {
       id
       title
+      description
       status 
       subject {
         id
