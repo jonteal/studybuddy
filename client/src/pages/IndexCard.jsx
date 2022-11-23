@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import SubjectInfo from "../components/SubjectInfo";
+import EditIndexCardForm from "../components/EditIndexCardForm";
+import DeleteIndexCardButton from "../components/DeleteIndexCardButton";
 import { useQuery } from "@apollo/client";
 import { GET_INDEX_CARD } from "../queries/indexCardQueries";
 
@@ -27,6 +29,10 @@ const IndexCard = () => {
           <h5 className="mt-3">Learning Progress</h5>
           <p className="lead">{data.indexCard.status}</p>
           <SubjectInfo subject={data.indexCard.subject} />
+
+          <EditIndexCardForm indexCard={data.indexCard} />
+
+          <DeleteIndexCardButton indexCardId={data.indexCard.id} />
         </div>
       )}
     </>

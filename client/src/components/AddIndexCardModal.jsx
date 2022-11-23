@@ -81,7 +81,7 @@ const AddIndexCardModal = () => {
               <div className="modal-body">
               <div className="mb-3">
                     <label className="form-label">Subject</label>
-                    <select id="clientId" className="form-select" value={subjectId} onChange={(e) => setSubjectId(e.target.value)}>
+                    <select id="subjectId" className="form-select" value={subjectId} onChange={(e) => setSubjectId(e.target.value)}>
                       <option value=''>Select Subject</option>
                       { data.subjects.map((subject) => (
                         <option key={subject.id} value={subject.id}>{subject.name}</option>

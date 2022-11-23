@@ -9,7 +9,7 @@ const IndexCardSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['No clue', 'Somewhat got', 'In the bag'],
+    enum: ['No clue', 'Somewhat get', 'In the bag'],
   },
   subjectId: {
     type: mongoose.Schema.Types.ObjectId,

@@ -88,6 +88,23 @@ const mutation = new GraphQLObjectType({
       },
     },
 
+    // Delete a subject
+    deleteSubject: {
+      type: SubjectType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        IndexCard.find({ subjectId: args.id }).then((indexCards) => {
+          indexCards.forEach((indexCard) => {
+            indexCard.remove();
+          });
+        });
+
+        return Subject.findByIdAndRemove(args.id);
+      },
+    },
+
     // Add an Index Card
     addIndexCard: {
       type: IndexCardType,
@@ -116,6 +133,50 @@ const mutation = new GraphQLObjectType({
         });
 
         return indexCard.save();
+      },
+    },
+
+    // Delete an index card
+    deleteIndexCard: {
+      type: IndexCardType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        return IndexCard.findByIdAndRemove(args.id);
+      },
+    },
+
+    // Update an Index Card
+    updateIndexCard: {
+      type: IndexCardType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
+        title: { type: GraphQLString },
+        description: { type: GraphQLString },
+        status: {
+          type: new GraphQLEnumType({
+            name: 'IndexCardStatusUpdate',
+            values: {
+              new: { value: 'No clue' },
+              progress: { value: 'Somewhat get' },
+              completed: { value: 'In the bag' },
+            },
+          }),
+        },
+      },
+      resolve(parent, args) {
+        return IndexCard.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              title: args.title,
+              description: args.description,
+              status: args.status,
+            },
+          },
+          { new: true }
+        );
       },
     },
   },
