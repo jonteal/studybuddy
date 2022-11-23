@@ -1,3 +1,11 @@
 .card-title {
   align-content: center;
 }
+
+.delete-index-card-btn {
+  width: 6.5%;
+  padding: 5px;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+}

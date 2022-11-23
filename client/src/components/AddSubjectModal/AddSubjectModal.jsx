@@ -37,7 +37,7 @@ const AddSubjectModal = () => {
     <>
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#addSubjectModal"
       >

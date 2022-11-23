@@ -14,7 +14,10 @@ const IndexCardSchema = new mongoose.Schema({
   subjectId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subject',
-  }
+  },
+  // subject: {
+  //   type: String,
+  // }
 });
 
 module.exports = mongoose.model('IndexCard', IndexCardSchema);
