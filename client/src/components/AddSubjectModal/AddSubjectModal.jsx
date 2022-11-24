@@ -79,7 +79,7 @@ const AddSubjectModal = () => {
                   />
                 </div>
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-success"
                   type="submit"
                   data-bs-dismiss="modal"
                 >
