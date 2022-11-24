@@ -15,6 +15,17 @@ const ConfirmDeleteModal = ({ subject }) => {
       },
     ],
   });
+
+  const subjectID = subject.id;
+
+  const handleDelete = (id) => {
+    if (subject.id === subjectID) {
+      deleteSubject()
+    }
+  }
+
+  console.log(subject);
+
   return (
     <div>
       <button
@@ -54,7 +65,7 @@ const ConfirmDeleteModal = ({ subject }) => {
               >
                 Close
               </button>
-              <button data-bs-dismiss="modal" onClick={deleteSubject} type="button" className="btn btn-outline-danger">
+              <button data-bs-dismiss="modal" onClick={handleDelete} type="button" className="btn btn-outline-danger">
                 Delete Subject 
               </button>
             </div>
