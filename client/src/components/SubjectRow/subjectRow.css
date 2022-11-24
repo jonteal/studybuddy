@@ -11,6 +11,23 @@
   margin-top: 10px;
 }
 
+.card-count-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+}
+
+.card-icon {
+  margin-left: 5px;
+  margin-right: 7px;
+}
+
+.card-count {
+  margin-right: 15px;
+}
+
 .delete-subject-button {
   width: auto
 }

@@ -52,7 +52,9 @@ const IndexCard = () => {
           <p>{data.indexCard.description}</p>
 
           <h5 className="mt-3">Confidence Level</h5>
-          <ConfidenceBadge className="lead" statusColor={statusColor} indexCard={data.indexCard} />
+          <p className="small status-label">
+            <ConfidenceBadge className="lead" statusColor={statusColor} indexCard={data.indexCard} />
+          </p>
           <SubjectInfo subject={data.indexCard.subject} />
 
           <EditIndexCardForm indexCard={data.indexCard} />
