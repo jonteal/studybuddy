@@ -39,7 +39,6 @@ const Subject = () => {
           <h1>{subjectData.subject.name}</h1>
           <AddIndexCardModal />
 
-        <ul>
         { matchingIndexCards.length > 0 ? (
           <div className="row mt-4">
             {matchingIndexCards.map((indexCard) => (
@@ -48,9 +47,7 @@ const Subject = () => {
           </div>
   
         ) : (<p>No index cards right now</p>)}
-        </ul>
-
-          
+        
         </div>
       )
       }

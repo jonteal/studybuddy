@@ -9,3 +9,35 @@
   align-self: flex-end;
   justify-content: center;
 }
+
+.status-label {
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.status {
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.in-the-bag {
+  background-color: rgb(2, 127, 2);
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.no-clue {
+  background-color: red;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.somewhat-get {
+  background-color: orange;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
