@@ -11,24 +11,45 @@ import IndexCards from "../components/IndexCards/IndexCards";
 
 const Subject = () => {
   const { id } = useParams();
-  const { loading, error, data } = useQuery(GET_SUBJECT, {
+
+  const { loading: subjectLoading, error: subjectError, data: subjectData } = useQuery(GET_SUBJECT, {
     variables: { id },
   });
 
-  if (loading) return <Spinner />;
-  if (error) return <p>Something went wrong!</p>;
+  const { loading: indexCardLoading, error: indexCardError, data: indexCardData } = useQuery(GET_INDEX_CARDS)
 
+  if (subjectLoading) return <Spinner />;
+  if (subjectError) return <p>Something went wrong!</p>;
+
+  if (indexCardLoading) return <Spinner />;
+  if (indexCardError) return <p>Something went wrong!</p>;
+
+  const subjectId = subjectData.subject.id;
+  const indexCardArray = indexCardData.indexCards;
+
+  const matchingIndexCards = indexCardArray.filter(card => card.subject.id === subjectId);
+  
   return (
     <div>
-      {!loading && !error && (
+      {!subjectLoading && !subjectError && (
         <div>
           <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
             Back
           </Link>
-          <h1>{data.subject.name}</h1>
+          <h1>{subjectData.subject.name}</h1>
           <AddIndexCardModal />
 
-          <IndexCards />
+        <ul>
+        { matchingIndexCards.length > 0 ? (
+          <div className="row mt-4">
+            {matchingIndexCards.map((indexCard) => (
+              <IndexCardComponent key={indexCard.id} indexCard={indexCard} />
+            ))}
+          </div>
+  
+        ) : (<p>No index cards right now</p>)}
+        </ul>
+
           
         </div>
       )

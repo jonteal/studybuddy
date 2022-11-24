@@ -14,6 +14,7 @@ Basic Overview and App Needs
 3. Color coding the index cards status tag according to the status. No clue = 'red', Somewhat get = 'yellow', In the bag = 'green'.
 4. Have a page dedicated to the subject which contains all the index cards for that subject.
 5. Make cards draggable so they can be organized in the way the user would like.
+6. Back button while on index card should navigate to previous page instead of always back to home.
 
 Nice to haves - Future Development
 1. Potentially incorporate a timer feature so the user can set a window of time they would like to study for.
