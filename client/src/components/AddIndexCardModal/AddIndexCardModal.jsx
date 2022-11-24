@@ -92,7 +92,7 @@ const AddIndexCardModal = () => {
                   </div>
                 <form onSubmit={onSubmit}>
                   <div className="mb-3">
-                    <label className="form-label">Title</label>
+                    <label className="form-label mt-2">Title</label>
                     <input
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
@@ -100,14 +100,14 @@ const AddIndexCardModal = () => {
                       type="text"
                       className="form-control"
                     />
-                    <label className="form-label">Description</label>
+                    <label className="form-label mt-3">Description</label>
                     <textarea
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       id="description"
                       className="form-control"
                     ></textarea>
-                    <label className="form-label">Status</label>
+                    <label className="form-label mt-3">Confidence Level</label>
                     <select
                       id="status"
                       className="form-select"

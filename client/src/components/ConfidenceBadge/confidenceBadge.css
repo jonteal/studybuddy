@@ -1,28 +1,7 @@
-.card-title {
-  align-content: center;
-}
-
-.delete-index-card-btn {
-  width: 6.5%;
-  padding: 5px;
-  display: flex;
-  align-self: flex-end;
-  justify-content: center;
-}
-
-.subject-label {
-  font-weight: bold;
-}
-
-.status-label {
-  font-weight: bold;
+.badge {
+  margin-left: 7px;
   font-size: .9rem;
-}
-
-.status {
-  color: white;
-  padding: 0.4rem;
-  border-radius: 10px;
+  padding: 10px;
 }
 
 .in-the-bag {

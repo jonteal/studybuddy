@@ -26,7 +26,7 @@ const SubjectRow = ({ subject }) => {
         </a>
       </div>
       <div>
-      <button className="delete-subject-button btn btn-outline-danger" onClick={deleteSubject}>
+      <button className="delete-subject-button btn btn-outline-danger btn-sm" onClick={deleteSubject}>
         <FaTrash />
       </button>
       </div>

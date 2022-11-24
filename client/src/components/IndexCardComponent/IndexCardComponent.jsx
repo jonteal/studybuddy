@@ -6,6 +6,7 @@ import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import { DELETE_INDEX_CARD } from "../../graphql/mutations/indexCardMutations";
 
 import "./indexCardComponent.css";
+import ConfidenceBadge from "../ConfidenceBadge/ConfidenceBadge";
 
 const IndexCardComponent = ({ indexCard }) => {
 
@@ -35,20 +36,19 @@ const IndexCardComponent = ({ indexCard }) => {
         <div className="card body p-2">
           <div className="d-flex justify-content-between align-items-center">
             <h5 className="card-title">{indexCard.title}</h5>
-            <a className="btn btn-light" href={`/indexCards/${indexCard.id}`}>
+            <a className="btn btn-outline-info btn-sm" href={`/indexCards/${indexCard.id}`}>
               {<FaEye />}
             </a>
           </div>
           <p>{indexCard.description.substring(0, 50)}...</p>
           <p className="small status-label">
-            Confidence:
-            <strong>
-              <span className={statusColor}>{indexCard.status}</span>
-            </strong>
+            Confidence Level:  
+            <ConfidenceBadge statusColor={statusColor} indexCard={indexCard} />
           </p>
+          <h6 className="subject-label">Subject</h6>
           <p>{indexCard.subject.name}</p>
           <button
-            className="btn btn-light btn-sm delete-index-card-btn"
+            className="btn btn-outline-danger btn-sm delete-index-card-btn"
             onClick={deleteIndexCard}
           >
             <FaTrash />
