@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_INDEX_CARD } from "../../graphql/mutations/indexCardMutations";
 import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
 
-import './editIndexCardForm.css';
+import "./editIndexCardForm.css";
 
 const EditIndexCardForm = ({ indexCard }) => {
   const [title, setTitle] = useState(indexCard.title);
@@ -23,7 +23,9 @@ const EditIndexCardForm = ({ indexCard }) => {
 
   const [updateIndexCard] = useMutation(UPDATE_INDEX_CARD, {
     variables: { id: indexCard.id, title, description, status },
-    refetchQueries: [{ query: GET_INDEX_CARD, variables: { id: indexCard.id } }],
+    refetchQueries: [
+      { query: GET_INDEX_CARD, variables: { id: indexCard.id } },
+    ],
   });
 
   const onSubmit = (e) => {
@@ -37,8 +39,7 @@ const EditIndexCardForm = ({ indexCard }) => {
   };
 
   return (
-    <div className="mt-5">
-      <h3>Update Index Card Details</h3>
+    <div className="mt-2">
       <form onSubmit={onSubmit}>
         <div className="mb-3">
           <label className="form-label">Title</label>
@@ -73,12 +74,25 @@ const EditIndexCardForm = ({ indexCard }) => {
           </select>
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
       </form>
     </div>
   );
-}
+};
 
 export default EditIndexCardForm;

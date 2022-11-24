@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "@apollo/client"
 import { GET_SUBJECTS } from '../../graphql/queries/subjectQueries';
 import SubjectRow from "../SubjectRow/SubjectRow";

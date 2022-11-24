@@ -6,6 +6,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import Header from "./components/Header/Header";
 import IndexCard from "./pages/IndexCard/IndexCard";
 import Subject from "./pages/Subject/Subject";
+// import configureStore from './store/configureStore';
+// import { Provider } from "react-redux";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -31,9 +33,11 @@ const client = new ApolloClient({
   cache,
 });
 
+// const store = configureStore();
+
 const App = () => {
   return (
-    <>
+    <div>
       <ApolloProvider client={client}>
         <Router>
         <Header />
@@ -47,7 +51,7 @@ const App = () => {
           </div>
         </Router>
       </ApolloProvider>
-    </>
+    </div>
   );
 };
 

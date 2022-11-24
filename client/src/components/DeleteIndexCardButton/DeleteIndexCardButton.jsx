@@ -19,7 +19,7 @@ const DeleteIndexCardButton = ({ indexCardId }) => {
 
   return (
     <div className="d-flex mt-5 ms-auto">
-      <button onClick={deleteIndexCard} className="btn btn-danger m-2">
+      <button onClick={deleteIndexCard} className="btn btn-outline-danger m-2">
         <FaTrash className="icon" /> Delete Index Card
       </button>
     </div>  )

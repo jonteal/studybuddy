@@ -6,3 +6,10 @@
   font-weight: bold;
   font-size: .9rem;
 }
+
+.index-card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
