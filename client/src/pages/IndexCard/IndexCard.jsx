@@ -10,7 +10,7 @@ import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
 
 import "./indexCard.css";
 import ConfidenceBadge from "../../components/ConfidenceBadge/ConfidenceBadge";
-import UpdateIndexCardModal from "../../components/UpdateIndexCardModal/UpdateIndexCardModal";
+import UpdateIndexCardModal from "../../components/modals/UpdateIndexCardModal/UpdateIndexCardModal";
 
 const IndexCard = () => {
   const [statusColor, setStatusColor] = useState("");

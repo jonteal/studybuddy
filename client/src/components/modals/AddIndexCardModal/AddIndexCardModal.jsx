@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { FaList } from 'react-icons/fa';
-import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
-import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
-import { ADD_INDEX_CARD} from '../../graphql/mutations/indexCardMutations';
+import { GET_INDEX_CARDS } from "../../../graphql/queries/indexCardQueries";
+import { GET_SUBJECTS } from "../../../graphql/queries/subjectQueries";
+import { ADD_INDEX_CARD} from '../../../graphql/mutations/indexCardMutations';
 
 import './addIndexCardModal.css';
 

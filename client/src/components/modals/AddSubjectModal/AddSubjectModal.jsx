@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {FaBookReader} from 'react-icons/fa';
 import { useMutation } from '@apollo/client';
-import { ADD_SUBJECT } from '../../graphql/mutations/subjectMutations';
-import { GET_SUBJECTS } from '../../graphql/queries/subjectQueries';
+import { ADD_SUBJECT } from '../../../graphql/mutations/subjectMutations';
+import { GET_SUBJECTS } from '../../../graphql/queries/subjectQueries';
 
 import './addSubjectModal.css';
 
