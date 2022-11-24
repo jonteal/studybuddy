@@ -7,7 +7,7 @@ const SubjectInfo = ({ subject }) => {
     <>
       <h5>Subjects</h5>
       <h6>
-        <FaBookReader />
+        <FaBookReader className='subject-icon'/>
         {subject.name}
       </h6>
     </>

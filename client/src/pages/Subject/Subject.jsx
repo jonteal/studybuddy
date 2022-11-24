@@ -1,12 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 
-import IndexCardComponent from "../components/IndexCardComponent/IndexCardComponent";
-import AddIndexCardModal from "../components/AddIndexCardModal/AddIndexCardModal"
-import Spinner from "../components/Spinner/Spinner";
+import IndexCardComponent from "../../components/IndexCardComponent/IndexCardComponent";
+import AddIndexCardModal from "../../components/AddIndexCardModal/AddIndexCardModal"
+import Spinner from "../../components/Spinner/Spinner";
 import { useQuery } from "@apollo/client";
-import { GET_SUBJECT } from "../graphql/queries/subjectQueries";
-import { GET_INDEX_CARDS } from '../graphql/queries/indexCardQueries';
-import IndexCards from "../components/IndexCards/IndexCards";
+import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
+import { GET_INDEX_CARDS } from '../../graphql/queries/indexCardQueries';
+import IndexCards from "../../components/IndexCards/IndexCards";
 
 
 const Subject = () => {
