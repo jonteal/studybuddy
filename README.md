@@ -19,4 +19,4 @@ Basic Overview and App Needs
 Nice to haves - Future Development
 1. Potentially incorporate a timer feature so the user can set a window of time they would like to study for.
 2. Keep track of how much time a user studies per week to help them know how much time they've put into their studies.
-3. 
+3. Add index card count in the subject button label

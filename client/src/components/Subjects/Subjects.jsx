@@ -13,22 +13,16 @@ const Subjects = () => {
   if (error) return <p>Something went wrong...</p>
   
   return (
-    <>
+    <div>
+      <h2>Subject</h2>
       {!loading && !error && (
-        <table>
-          <thead>
-            <tr>
-              <th>Subject</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.subjects.map(subject => (
-              <SubjectRow key={subject.id} subject={subject} />
-            ))}
-          </tbody>
-        </table>
+        <div className="subjects-container">
+          {data.subjects.map(subject => (
+            <SubjectRow key={subject.id} subject={subject} />
+          ))}
+        </div>
       )}
-    </>
+    </div>
   )
 }
 

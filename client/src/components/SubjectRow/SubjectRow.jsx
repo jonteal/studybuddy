@@ -18,14 +18,14 @@ const SubjectRow = ({ subject }) => {
   });
 
   return (
-    <tr>
-      <td><a className="btn btn-light" href={`/subjects/${subject.id}`}>{subject.name}</a></td>
-      <td>
+    <div className="subject-container">
+      <div><a className="btn btn-light" href={`/subjects/${subject.id}`}>{subject.name}</a></div>
+      <div>
         <button className="btn btn-danger btn-sm" onClick={deleteSubject}>
           <FaTrash />
         </button>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 };
 
