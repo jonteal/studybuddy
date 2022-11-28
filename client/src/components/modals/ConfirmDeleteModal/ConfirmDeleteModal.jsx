@@ -1,9 +1,9 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
-import { DELETE_SUBJECT } from "../../graphql/mutations/subjectMutations";
-import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
-import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
+import { DELETE_SUBJECT } from "../../../graphql/mutations/subjectMutations";
+import { GET_SUBJECTS } from "../../../graphql/queries/subjectQueries";
+import { GET_INDEX_CARDS } from "../../../graphql/queries/indexCardQueries";
 
 const ConfirmDeleteModal = ({ subject }) => {
   const [deleteSubject] = useMutation(DELETE_SUBJECT, {

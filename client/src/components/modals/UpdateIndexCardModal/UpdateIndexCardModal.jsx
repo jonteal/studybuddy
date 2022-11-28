@@ -2,11 +2,13 @@ import React from "react";
 import EditIndexCardForm from "./../../EditIndexCardForm/EditIndexCardForm";
 
 const UpdateIndexCardModal = ({ indexCard }) => {
+
+  console.log(indexCard);
   return (
     <div>
       <button
         type="button"
-        class="btn btn-outline-primary"
+        className="btn btn-outline-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
@@ -14,23 +16,25 @@ const UpdateIndexCardModal = ({ indexCard }) => {
       </button>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="addIndexCardModalLabel">
+                {indexCard.subject.name}
+              </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <EditIndexCardForm indexCard={indexCard} />
             </div>
           </div>

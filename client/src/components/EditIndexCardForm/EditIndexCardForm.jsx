@@ -74,7 +74,7 @@ const EditIndexCardForm = ({ indexCard }) => {
           </select>
         </div>
 
-        <div class="modal-footer">
+        <div className="modal-footer">
           <button
             type="submit"
             className="btn btn-primary"
@@ -84,7 +84,7 @@ const EditIndexCardForm = ({ indexCard }) => {
           </button>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             data-bs-dismiss="modal"
           >
             Close

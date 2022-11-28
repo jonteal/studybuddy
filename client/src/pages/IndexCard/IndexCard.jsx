@@ -3,7 +3,6 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import Spinner from "../../components/Spinner/Spinner";
 import SubjectInfo from "../../components/SubjectInfo/SubjectInfo";
-import EditIndexCardForm from "../../components/EditIndexCardForm/EditIndexCardForm";
 import DeleteIndexCardButton from "../../components/DeleteIndexCardButton/DeleteIndexCardButton";
 import { useQuery } from "@apollo/client";
 import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";

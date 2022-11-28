@@ -19,15 +19,12 @@ const IndexCardType = new GraphQLObjectType({
     title: { type: GraphQLString },
     description: { type: GraphQLString },
     status: { type: GraphQLString },
-    subject: { // might need to delete or comment this bit out
+    subject: { 
       type: SubjectType,
       resolve(parent, args) {
         return Subject.findById(parent.subjectId);
       },
     },
-    // subject: {
-    //   type: GraphQLString
-    // }
   }),
 });
 
