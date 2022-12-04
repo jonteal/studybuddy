@@ -24,8 +24,6 @@ const ConfirmDeleteModal = ({ subject }) => {
     }
   }
 
-  console.log(subject);
-
   return (
     <div>
       <button

@@ -105,6 +105,26 @@ const mutation = new GraphQLObjectType({
       },
     },
 
+    // Edit a Subject Name
+    updateSubject: {
+      type: SubjectType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        return Subject.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+            },
+          },
+          { new: true }
+        );
+      },
+    },
+
     // Add an Index Card
     addIndexCard: {
       type: IndexCardType,

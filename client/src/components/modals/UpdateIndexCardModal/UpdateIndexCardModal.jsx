@@ -3,7 +3,6 @@ import EditIndexCardForm from "./../../EditIndexCardForm/EditIndexCardForm";
 
 const UpdateIndexCardModal = ({ indexCard }) => {
 
-  console.log(indexCard);
   return (
     <div>
       <button

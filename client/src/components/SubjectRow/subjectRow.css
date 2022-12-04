@@ -31,3 +31,7 @@
 .delete-subject-button {
   width: auto
 }
+
+.delete-subject-dropdown {
+  align-self: center;
+}

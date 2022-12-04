@@ -1,24 +1,18 @@
 import { useState } from 'react';
-import {FaBookReader} from 'react-icons/fa';
 import { useMutation } from '@apollo/client';
-import { ADD_SUBJECT } from '../../../graphql/mutations/subjectMutations';
-import { GET_SUBJECTS } from '../../../graphql/queries/subjectQueries';
+import { UPDATE_SUBJECT } from '../../../graphql/mutations/subjectMutations';
+import { GET_SUBJECT } from '../../../graphql/queries/subjectQueries';
 
-import './addSubjectModal.css';
+import './updateSubjectModal.css'
 
-const AddSubjectModal = () => {
+const UpdateSubjectModal = ({ subject }) => {
   const [name, setName] = useState('');
 
-  const [addSubject] = useMutation(ADD_SUBJECT, {
-    variables: { name },
-    update(cache, { data: { addSubject } }) {
-      const { subjects } = cache.readQuery({ query: GET_SUBJECTS });
-
-      cache.writeQuery({
-        query: GET_SUBJECTS,
-        data: { subjects: [...subjects, addSubject] },
-      });
-    },
+  const [updateSubject] = useMutation(UPDATE_SUBJECT, {
+    variables: { id: subject.id, name },
+    refetchQueries: [
+      { query: GET_SUBJECT, variables: { id: subject.id } },
+    ],
   });
 
   const onSubmit = (e) => {
@@ -28,7 +22,7 @@ const AddSubjectModal = () => {
       return alert('Please fill in the subject name')
     };
 
-    addSubject(name);
+    updateSubject(name);
 
     setName('');
   }
@@ -37,27 +31,26 @@ const AddSubjectModal = () => {
     <div>
       <button
         type="button"
-        className="btn btn-success"
+        className="dropdown-item"
         data-bs-toggle="modal"
-        data-bs-target="#addSubjectModal"
+        data-bs-target="#updateSubjectModal"
       >
         <div className="d-flex align-items-center">
-          <FaBookReader className="icon" />
-          <div className='add-subject-btn-label'>Add Subject</div>
+          <div className='update-subject-btn-label'>Update Subject</div>
         </div>
       </button>
 
       <div
         className="modal fade"
-        id="addSubjectModal"
-        aria-labelledby="addSubjectModalLabel"
+        id="updateSubjectModal"
+        aria-labelledby="updateSubjectModalLabel"
         aria-hidden="true"
       >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="addSubjectModalLabel">
-                Add Subject
+              <h1 className="modal-title fs-5" id="updateSubjectModalLabel">
+                Update Subject
               </h1>
               <button
                 type="button"
@@ -79,7 +72,7 @@ const AddSubjectModal = () => {
                   />
                 </div>
                 <button
-                  className="btn btn-success"
+                  className="btn btn-secondary"
                   type="submit"
                   data-bs-dismiss="modal"
                 >
@@ -94,4 +87,4 @@ const AddSubjectModal = () => {
   )
 }
 
-export default AddSubjectModal
+export default UpdateSubjectModal;

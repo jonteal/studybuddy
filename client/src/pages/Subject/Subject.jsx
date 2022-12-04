@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+// import { useEffect, useCallback, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import IndexCardComponent from "../../components/IndexCardComponent/IndexCardComponent";
@@ -17,17 +17,15 @@ import { GET_INDEX_CARDS } from '../../graphql/queries/indexCardQueries';
 const Subject = () => {
   const { id } = useParams();
 
-  const [noClueCount, setNoClueCount] = useState(0);
-  const [somewhatGetCount, setSomewhatGetCount] = useState(0);
-  const [inTheBagCount, setInTheBagCount] = useState(0);
+  // const [noClueCount, setNoClueCount] = useState(0);
+  // const [somewhatGetCount, setSomewhatGetCount] = useState(0);
+  // const [inTheBagCount, setInTheBagCount] = useState(0);
 
   const { loading: subjectLoading, error: subjectError, data: subjectData } = useQuery(GET_SUBJECT, {
     variables: { id },
   });
   
   const { loading: indexCardLoading, error: indexCardError, data: indexCardData } = useQuery(GET_INDEX_CARDS)
-
-  console.log("indexCards: ", indexCardData);
 
   if (subjectLoading) return <Spinner />;
   if (subjectError) return <p>Something went wrong!</p>;
@@ -40,42 +38,6 @@ const Subject = () => {
 
   const matchingIndexCards = indexCardArray.filter(card => card.subject.id === subjectId);
 
-  console.log("matchingCardsArray: ", matchingIndexCards);
-
-  let getPercentages = () => {
-    if (indexCardData) {
-      const cardCount = indexCardData.indexCards.length;
-      // loop through all cards and look at status
-      // push count of all statuses into 3 new arrays for each
-      // (one for each status)
-      // then divide the length of each of those arrays by 
-      // the card count. That will yield the percent of each
-      // status within the total card count
-      
-      matchingIndexCards.forEach(card => {
-        if (card.status === 'No clue') {
-
-          setNoClueCount(noClueCount + 1)
-          console.log("noClueArray: ", noClueCount);
-
-        } else if (card.status === 'Somewhat get') {
-
-          setSomewhatGetCount(somewhatGetCount + 1)
-          console.log('somewhatGetCount: ', somewhatGetCount);
-
-        } else if (card.status === 'In the bag') {
-
-          setInTheBagCount(somewhatGetCount + 1)
-          console.log('inTheBagCount: ', inTheBagCount);
-        }
-      }
-      )
-    }
-  }
-
-  getPercentages();
-
-  
   return (
     <div>
       {!subjectLoading && !subjectError && (
@@ -103,6 +65,3 @@ const Subject = () => {
 };
 
 export default Subject
-
-// 1. display all current index cards for a subject 
-// 2. add index card modal component on here
