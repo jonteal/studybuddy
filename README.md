@@ -23,3 +23,5 @@ Nice to haves - Future Development
 4. Make cards draggable so they can be organized in the way the user would like.
 5. Add redux to handle state management
 6. Update card count in subject row component 
+7. Add filtering on home page and on subject page to show only a certain confidence level
+8. Change all index cards in subject view to accordian view and change title background color to confidence level color

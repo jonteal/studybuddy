@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_SUBJECT } from '../../../graphql/mutations/subjectMutations';
 import { GET_SUBJECT } from '../../../graphql/queries/subjectQueries';
+import EditSubjectForm from '../../EditSubjectForm/EditSubjectForm';
+import { FaEdit } from "react-icons/fa";
 
 import './updateSubjectModal.css'
 
@@ -35,9 +37,7 @@ const UpdateSubjectModal = ({ subject }) => {
         data-bs-toggle="modal"
         data-bs-target="#updateSubjectModal"
       >
-        <div className="d-flex align-items-center">
-          <div className='update-subject-btn-label'>Update Subject</div>
-        </div>
+      <FaEdit />
       </button>
 
       <div
@@ -60,25 +60,6 @@ const UpdateSubjectModal = ({ subject }) => {
               ></button>
             </div>
             <div className="modal-body">
-              <form onSubmit={onSubmit}>
-                <div className="mb-3">
-                  <label className="form-label">Name</label>
-                  <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    id="name"
-                    type="text"
-                    className="form-control"
-                  />
-                </div>
-                <button
-                  className="btn btn-secondary"
-                  type="submit"
-                  data-bs-dismiss="modal"
-                >
-                  Submit
-                </button>
-              </form>
             </div>
           </div>
         </div>

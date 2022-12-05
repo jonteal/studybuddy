@@ -10,6 +10,7 @@ import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
 import "./indexCard.css";
 import ConfidenceBadge from "../../components/ConfidenceBadge/ConfidenceBadge";
 import UpdateIndexCardModal from "../../components/modals/UpdateIndexCardModal/UpdateIndexCardModal";
+import Accordion from "../../components/Accordion";
 
 const IndexCard = () => {
   const [statusColor, setStatusColor] = useState("");
@@ -36,6 +37,10 @@ const IndexCard = () => {
 
   const navigate = useNavigate();
 
+  const handleBackNavigate = () => {
+    navigate(-1);
+  };
+
   if (loading) return <Spinner />;
   if (error) return <p>Something went wrong!</p>;
 
@@ -43,9 +48,9 @@ const IndexCard = () => {
     <div>
       {!loading && !error && (
         <div className="mx-auto w-75 card p-5">
-          <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+          <button onClick={handleBackNavigate} className="btn btn-light btn-sm w-25 d-inline ms-auto">
             <FaRegArrowAltCircleLeft className="back-arrow" />
-          </Link>
+          </button>
 
           <h1>{data.indexCard.title}</h1>
           <p>{data.indexCard.description}</p>

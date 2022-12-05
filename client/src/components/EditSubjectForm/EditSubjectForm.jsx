@@ -1,21 +1,20 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { UPDATE_SUBJECT } from "../../graphql/mutations/subjectMutations";
-import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
+import { UPDATE_SUBJECT } from '../../graphql/mutations/subjectMutations';
+import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 
 import "./editSubjectForm.css";
 
-const EditSubjectForm = ({ subject }) => {
+const EditIndexCardForm = ({ subject }) => {
   const [name, setName] = useState(subject.name);
-    
-  
-  const [updateIndexCard] = useMutation(UPDATE_SUBJECT, {
+
+
+  const [updateSubject] = useMutation(UPDATE_SUBJECT, {
     variables: { id: subject.id, name },
     refetchQueries: [
-      { query: GET_SUBJECTS, variables: { id: subject.id } },
+      { query: GET_SUBJECT, variables: { id: subject.id } },
     ],
   });
-
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -24,24 +23,24 @@ const EditSubjectForm = ({ subject }) => {
       return alert("Please fill out all fields");
     }
 
-    updateIndexCard(name);
-  }
-
-  
+    updateSubject(name);
+  };
 
   return (
     <div className="mt-2">
       <form onSubmit={onSubmit}>
         <div className="mb-3">
-          <label className="form-label">Name</label>
+          <label className="form-label">Title</label>
           <input
             type="text"
             className="form-control"
-            id="name"
+            id="title"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
+        
+        
 
         <div className="modal-footer">
           <button
@@ -61,7 +60,7 @@ const EditSubjectForm = ({ subject }) => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default EditSubjectForm;
+export default EditIndexCardForm;

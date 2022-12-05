@@ -7,6 +7,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import { useQuery } from "@apollo/client";
 import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from '../../graphql/queries/indexCardQueries';
+import Accordion from "../../components/Accordion";
 
 // ADD TOTAL CONFIDENCE PERCENTAGE BAR WHEN USER CLICKS ON SUBJECT. PERCENTAGE WILL BE BROKEN INTO CATEGORIES. 
 // PERCENT WILL BE OUT OF TOTAL CARDS FOR A GIVEN SUBJECT
@@ -60,6 +61,7 @@ const Subject = () => {
         </div>
       )
       }
+      <Accordion matchingIndexCards={matchingIndexCards} />
     </div>
   );
 };
