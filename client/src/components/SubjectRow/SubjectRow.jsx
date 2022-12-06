@@ -2,7 +2,6 @@ import { useMutation } from "@apollo/client";
 import { DELETE_SUBJECT } from "../../graphql/mutations/subjectMutations";
 import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
-import UpdateSubjectModal from "../modals/UpdateSubjectModal/UpdateSubjectModal";
 
 import "./subjectRow.css";
 
@@ -24,9 +23,6 @@ const SubjectRow = ({ subject }) => {
           {subject.name}
         </a>
       </div>
-{/*     <button>
-      <UpdateSubjectModal subject={subject} />
-  </button> */ }
       <div>
         <div className="dropdown">
           <button

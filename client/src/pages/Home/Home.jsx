@@ -18,7 +18,7 @@ const Home = () => {
       </div>
       <Subjects />
       <hr />
-      <IndexCards />
+      {/* <IndexCards /> */}
     </div>
   );
 };

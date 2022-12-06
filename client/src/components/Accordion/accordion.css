@@ -1,0 +1,28 @@
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-button {
+  
+}
+
+.in-the-bag {
+  background-color: rgb(2, 127, 2);
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.no-clue {
+  background-color: red;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.somewhat-get {
+  background-color: orange;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+}

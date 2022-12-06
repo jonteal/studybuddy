@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import Spinner from "../../components/Spinner/Spinner";
 import SubjectInfo from "../../components/SubjectInfo/SubjectInfo";
@@ -10,7 +10,6 @@ import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
 import "./indexCard.css";
 import ConfidenceBadge from "../../components/ConfidenceBadge/ConfidenceBadge";
 import UpdateIndexCardModal from "../../components/modals/UpdateIndexCardModal/UpdateIndexCardModal";
-import Accordion from "../../components/Accordion";
 
 const IndexCard = () => {
   const [statusColor, setStatusColor] = useState("");
