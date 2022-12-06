@@ -1,7 +1,6 @@
 // import { useEffect, useCallback, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import IndexCardComponent from "../../components/IndexCardComponent/IndexCardComponent";
 import AddIndexCardModal from "../../components/modals/AddIndexCardModal/AddIndexCardModal"
 import Spinner from "../../components/Spinner/Spinner";
 import { useQuery } from "@apollo/client";
@@ -9,18 +8,8 @@ import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from '../../graphql/queries/indexCardQueries';
 import Accordion from "../../components/Accordion/Accordion";
 
-// ADD TOTAL CONFIDENCE PERCENTAGE BAR WHEN USER CLICKS ON SUBJECT. PERCENTAGE WILL BE BROKEN INTO CATEGORIES. 
-// PERCENT WILL BE OUT OF TOTAL CARDS FOR A GIVEN SUBJECT
-// 1. IN THE BAG
-// 2. SOMEWHAT GET
-// 3. NO CLUE
-
 const Subject = () => {
   const { id } = useParams();
-
-  // const [noClueCount, setNoClueCount] = useState(0);
-  // const [somewhatGetCount, setSomewhatGetCount] = useState(0);
-  // const [inTheBagCount, setInTheBagCount] = useState(0);
 
   const { loading: subjectLoading, error: subjectError, data: subjectData } = useQuery(GET_SUBJECT, {
     variables: { id },

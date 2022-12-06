@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { cardOptions } from "../../utils/cardOptions";
-import { FaEye, FaTrash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 import "./accordionCard.css";
 

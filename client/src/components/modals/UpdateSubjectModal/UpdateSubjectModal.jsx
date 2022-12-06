@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_SUBJECT } from '../../../graphql/mutations/subjectMutations';
 import { GET_SUBJECT } from '../../../graphql/queries/subjectQueries';
-import EditSubjectForm from '../../EditSubjectForm/EditSubjectForm';
 import { FaEdit } from "react-icons/fa";
 
 import './updateSubjectModal.css'

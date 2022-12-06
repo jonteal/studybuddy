@@ -1,3 +1,14 @@
+.index-card-main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.last-card-btn,
+.next-card-btn {
+  font-size: 2.5rem;
+}
+
 .back-arrow {
   font-size: 1.2rem;
 }
