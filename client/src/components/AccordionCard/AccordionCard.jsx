@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
-import ConfidenceBadge from "../ConfidenceBadge/ConfidenceBadge";
-import { cardOptions } from '../../utils/cardOptions';
+import { cardOptions } from "../../utils/cardOptions";
+import { FaEye, FaTrash } from "react-icons/fa";
 
-import './accordionCard.css';
+import "./accordionCard.css";
 
 const AccordionCard = ({ indexCard, index }) => {
-
-  const [statusColor, setStatusColor] = useState('')
+  const [statusColor, setStatusColor] = useState("");
 
   useEffect(() => {
-    if (indexCard.status === 'In the bag') {
-      setStatusColor('in-the-bag');
-    } else if (indexCard.status === 'Somewhat get') {
-      setStatusColor('somewhat-get')
-    } else if (indexCard.status === 'No clue') {
-      setStatusColor('no-clue')
+    if (indexCard.status === "In the bag") {
+      setStatusColor("in-the-bag");
+    } else if (indexCard.status === "Somewhat get") {
+      setStatusColor("somewhat-get");
+    } else if (indexCard.status === "No clue") {
+      setStatusColor("no-clue");
     }
-  }, [indexCard.status])
-
+  }, [indexCard.status]);
 
   return (
     <div>
@@ -43,10 +41,9 @@ const AccordionCard = ({ indexCard, index }) => {
       >
         <div className="accordion-body">
           <p>{indexCard.description}</p>
-          <ConfidenceBadge
-            statusColor={statusColor}
-            indexCard={indexCard}
-          />
+          <a className="btn btn-outline-info view-card-btn" href={`/indexCards/${indexCard.id}`}>
+            {<FaEye />}
+          </a>
         </div>
       </div>
     </div>
