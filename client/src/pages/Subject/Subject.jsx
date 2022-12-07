@@ -6,8 +6,8 @@ import { useQuery } from "@apollo/client";
 import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import Accordion from "../../components/Accordion/Accordion";
-import IndexCards from "../../components/IndexCards/IndexCards";
 import { FaClipboardList, FaRegMap } from "react-icons/fa";
+import FlippableCards from "../../components/FlippableCards/FlippableCards";
 
 import "./subject.css";
 
@@ -75,12 +75,13 @@ const Subject = () => {
                 </div>
               </div>
             </button>
+            {flashCardMode && <button className="btn btn-outline-dark">Flip All Cards</button>}
           </div>
 
           <div className="card-container">
             {flashCardMode ? (
               matchingIndexCards.length > 0 ? (
-                <IndexCards matchingIndexCards={matchingIndexCards} />
+                <FlippableCards matchingIndexCards={matchingIndexCards} />
               ) : (
                 <p>No index cards right now</p>
               )
