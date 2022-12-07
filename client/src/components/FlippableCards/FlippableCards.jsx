@@ -5,7 +5,7 @@ const FlippableCards = ({ matchingIndexCards }) => {
 
   console.log(matchingIndexCards)
   return (
-    <div>
+    <div className='flippable-card-container'>
       {matchingIndexCards.map((indexCard, index) => (
         <div key={indexCard.id}>
           <FlippableCard

@@ -1,14 +1,16 @@
 import React from 'react'
 
+import './flippableCard.css';
+
 const FlippableCard = ({ indexCard }) => {
   return (
     <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            Hello
+            {indexCard.title}
           </div>
           <div className="flip-card-back">
-            Goodbye
+            {indexCard.description}
           </div>
         </div>
       </div>
