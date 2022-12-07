@@ -14,7 +14,7 @@ import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 
 import "./indexCard.css";
 
-const IndexCard = () => {
+const IndexCard = ({ matchingIndexCards }) => {
   const [statusColor, setStatusColor] = useState("");
 
   const { id } = useParams();

@@ -6,7 +6,9 @@ import { useQuery } from "@apollo/client";
 import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import Accordion from "../../components/Accordion/Accordion";
-import IndexCardComponent from "../../components/IndexCardComponent/IndexCardComponent";
+import IndexCards from "../../components/IndexCards/IndexCards";
+
+import "./subject.css";
 
 const Subject = () => {
   const [flashCardMode, setFlashCardMode] = useState(true);
@@ -41,34 +43,37 @@ const Subject = () => {
 
   return (
     <div>
-      <button
-        type="button"
-        class="btn btn-outline-info"
-        onClick={() => setFlashCardMode(!flashCardMode)}
-      >
-        {flashCardMode ? <p>Flash Card Mode</p> : <p>List Mode</p>}
-      </button>
+      <div className="btns-container">
+        <button
+          type="button"
+          className="btn btn-light flash-card-toggle-btn"
+          onClick={() => setFlashCardMode(!flashCardMode)}
+        >
+          {flashCardMode ? <p>Flash Card Mode</p> : <p>List Mode</p>}
+        </button>
+        <h1 className="subject-name">{subjectData.subject.name}</h1>
+        <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+          Back
+        </Link>
+      </div>
       {!subjectLoading && !subjectError && (
         <div>
-          <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
-            Back
-          </Link>
-          <h1>{subjectData.subject.name}</h1>
-          <AddIndexCardModal />
-
-          {flashCardMode ? (
-            matchingIndexCards.length > 0 ? (
-              matchingIndexCards.map((indexCard) => (
-                <IndexCardComponent key={indexCard.id} indexCard={indexCard} />
-              ))
+          <AddIndexCardModal className="add-index-card-modal" />
+          <div className="card-container">
+            {flashCardMode ? (
+              matchingIndexCards.length > 0 ? (
+                <IndexCards matchingIndexCards={matchingIndexCards} />
+              ) : (
+                <p>No index cards right now</p>
+              )
+            ) : matchingIndexCards.length > 0 ? (
+              <div className="accordion-container">
+                <Accordion matchingIndexCards={matchingIndexCards} />
+              </div>
             ) : (
               <p>No index cards right now</p>
-            )
-          ) : matchingIndexCards.length > 0 ? (
-            <Accordion matchingIndexCards={matchingIndexCards} />
-          ) : (
-            <p>No index cards right now</p>
-          )}
+            )}
+          </div>
         </div>
       )}
     </div>

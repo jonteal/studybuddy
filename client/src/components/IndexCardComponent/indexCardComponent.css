@@ -26,19 +26,19 @@
 }
 
 .in-the-bag {
-  background-color: rgb(2, 127, 2);
-  color: white;
+  background-color: rgb(158, 245, 158);
+  color: rgb(52, 52, 52);
   padding: 0.4rem;
 }
 
 .no-clue {
-  background-color: red;
-  color: white;
+  background-color: rgb(255, 106, 106);
+  color: rgb(52, 52, 52);
   padding: 0.4rem;
 }
 
 .somewhat-get {
-  background-color: orange;
-  color: white;
+  background-color: rgb(252, 197, 96);
+  color: rgb(52, 52, 52);
   padding: 0.4rem;
 }
