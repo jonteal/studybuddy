@@ -55,8 +55,8 @@ const AddIndexCardModal = () => {
             data-bs-toggle="modal"
             data-bs-target="#addIndexCardModal"
           >
-            <div className="d-flex align-items-center ">
-              <FaList className="icon" />
+            <div className="d-flex align-items-center">
+              <FaList/>
               <div className="add-index-btn-label">New Index Card</div>
             </div>
           </button>

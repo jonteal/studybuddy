@@ -7,6 +7,7 @@ import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import Accordion from "../../components/Accordion/Accordion";
 import IndexCards from "../../components/IndexCards/IndexCards";
+import { FaClipboardList, FaRegMap } from "react-icons/fa";
 
 import "./subject.css";
 
@@ -43,22 +44,39 @@ const Subject = () => {
 
   return (
     <div>
-      <div className="btns-container">
-        <button
-          type="button"
-          className="btn btn-light flash-card-toggle-btn"
-          onClick={() => setFlashCardMode(!flashCardMode)}
-        >
-          {flashCardMode ? <p>Flash Card Mode</p> : <p>List Mode</p>}
-        </button>
+      <div className="subject-name-container">
         <h1 className="subject-name">{subjectData.subject.name}</h1>
+      </div>
         <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
           Back
         </Link>
-      </div>
       {!subjectLoading && !subjectError && (
         <div>
-          <AddIndexCardModal className="add-index-card-modal" />
+          <div className="actions-btns-container">
+            <AddIndexCardModal className="add-index-card-modal" />
+            <button
+              type="button"
+              className="btn btn-success flash-card-toggle-btn"
+              onClick={() => setFlashCardMode(!flashCardMode)}
+            >
+              <div className="d-flex align-items-center">
+                <div className="flashcard-btn-label">
+                  {flashCardMode ? (
+                    <div className="flashcard-btn-label">
+                      <FaClipboardList className="icon" />
+                      <div className="btn-text">List Mode</div>
+                    </div>
+                  ) : (
+                    <div className="flashcard-btn-label">
+                      <FaRegMap />
+                      <div className="btn-text">Flash Card Mode</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </button>
+          </div>
+
           <div className="card-container">
             {flashCardMode ? (
               matchingIndexCards.length > 0 ? (
