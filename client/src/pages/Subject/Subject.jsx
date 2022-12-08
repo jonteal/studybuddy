@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import AddIndexCardModal from "../../components/modals/AddIndexCardModal/AddIndexCardModal";
-import Spinner from "../../components/Spinner/Spinner";
 import { useQuery } from "@apollo/client";
 import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
 import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
+import Spinner from "../../components/Spinner/Spinner";
 import Accordion from "../../components/Accordion/Accordion";
-import { FaClipboardList, FaRegMap } from "react-icons/fa";
 import FlippableCards from "../../components/FlippableCards/FlippableCards";
+import { FaClipboardList, FaRegMap } from "react-icons/fa";
 
 import "./subject.css";
 
@@ -29,11 +29,8 @@ const Subject = () => {
     data: indexCardData,
   } = useQuery(GET_INDEX_CARDS);
 
-  if (subjectLoading) return <Spinner />;
-  if (subjectError) return <p>Something went wrong!</p>;
-
-  if (indexCardLoading) return <Spinner />;
-  if (indexCardError) return <p>Something went wrong!</p>;
+  if (subjectLoading || indexCardLoading) return <Spinner />;
+  if (subjectError || indexCardError) return <p>Something went wrong!</p>;
 
   const subjectId = subjectData.subject.id;
   const indexCardArray = indexCardData.indexCards;

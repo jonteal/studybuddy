@@ -2,6 +2,61 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 100%;
+}
+
+.index-card-content-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.indexCard-navigation-link {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+  margin-top: 0;
+  align-self: center;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.indexCard-content {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  align-items: center;
+  width: 100%;
+}
+
+.indexCard-status-subject {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.indexCard-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 15%;
+  width: 100%;
 }
 
 .last-card-btn,
@@ -15,12 +70,5 @@
 
 .status-label {
   font-weight: bold;
-  font-size: .9rem;
-}
-
-.index-card-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  font-size: .8rem;
 }

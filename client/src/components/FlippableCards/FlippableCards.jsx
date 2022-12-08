@@ -1,11 +1,10 @@
-import FlippableCard from '../FlippableCard/FlippableCard';
-import './flippableCards.css';
+import FlippableCard from "../FlippableCard/FlippableCard";
+import "./flippableCards.css";
 
 const FlippableCards = ({ matchingIndexCards }) => {
 
-  console.log(matchingIndexCards)
   return (
-    <div className='flippable-card-container'>
+    <div className="flippable-card-container">
       {matchingIndexCards.map((indexCard, index) => (
         <div key={indexCard.id}>
           <FlippableCard
@@ -16,7 +15,7 @@ const FlippableCards = ({ matchingIndexCards }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default FlippableCards;

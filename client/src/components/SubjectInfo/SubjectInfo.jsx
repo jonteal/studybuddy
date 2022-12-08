@@ -4,13 +4,13 @@ import './subjectInfo.css';
 
 const SubjectInfo = ({ subject }) => {
   return (
-    <>
-      <h5>Subject</h5>
+    <div className='subject-info-container'>
+      <h5 className='small'>Subject</h5>
       <h6>
         <FaBookReader className='subject-icon'/>
         {subject.name}
       </h6>
-    </>
+    </div>
   )
 }
 

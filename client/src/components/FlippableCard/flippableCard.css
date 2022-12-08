@@ -31,7 +31,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 20px; */
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
@@ -50,4 +49,28 @@
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.flippable-card-link-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 20%;
+  margin-top: 0;
+}
+
+.flippable-card-description {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flippable-card-status {
+  height: 20%;
+  width: 100%;
 }

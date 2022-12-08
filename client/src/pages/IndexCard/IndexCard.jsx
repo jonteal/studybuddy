@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { useQuery } from "@apollo/client";
+import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
+import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
 import Spinner from "../../components/Spinner/Spinner";
 import SubjectInfo from "../../components/SubjectInfo/SubjectInfo";
 import DeleteIndexCardButton from "../../components/DeleteIndexCardButton/DeleteIndexCardButton";
-import { useQuery } from "@apollo/client";
-import { GET_INDEX_CARD } from "../../graphql/queries/indexCardQueries";
 import ConfidenceBadge from "../../components/ConfidenceBadge/ConfidenceBadge";
 import UpdateIndexCardModal from "../../components/modals/UpdateIndexCardModal/UpdateIndexCardModal";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-import { GET_INDEX_CARDS } from "../../graphql/queries/indexCardQueries";
-import { GET_SUBJECT } from "../../graphql/queries/subjectQueries";
+import {
+  FaAngleRight,
+  FaAngleLeft,
+  FaRegArrowAltCircleLeft,
+} from "react-icons/fa";
 
 import "./indexCard.css";
 
@@ -31,14 +33,6 @@ const IndexCard = ({ matchingIndexCards }) => {
     error: indexCardsError,
     data: indexCardsData,
   } = useQuery(GET_INDEX_CARDS);
-
-  // const {
-  //   loading: subjectLoading,
-  //   error: subjectError,
-  //   data: subjectData,
-  // } = useQuery(GET_SUBJECT, {
-  //   variables: { id },
-  // });
 
   useEffect(() => {
     const renderBadge = () => {
@@ -61,18 +55,8 @@ const IndexCard = ({ matchingIndexCards }) => {
     navigate(-1);
   };
 
-  if (indexCardLoading || indexCardsLoading)
-    return <Spinner />;
-  if (indexCardError || indexCardsError)
-    return <p>Something went wrong!</p>;
-
-
-  // const subjectId = subjectData.subject.id;
-  // const indexCardsArray = indexCardsData.indexCards;
-  // const matchingIndexCards = indexCardsArray.filter(
-  //   (card) => card.subject.id === subjectId
-  // );
-
+  if (indexCardLoading || indexCardsLoading) return <Spinner />;
+  if (indexCardError || indexCardsError) return <p>Something went wrong!</p>;
 
   return (
     <div>
@@ -81,27 +65,35 @@ const IndexCard = ({ matchingIndexCards }) => {
           <a className="last-card-btn" href="/">
             <FaAngleLeft />
           </a>
-          <div className="mx-auto w-75 card p-5">
-            <button
-              onClick={handleBackNavigate}
-              className="btn btn-light btn-sm w-25 d-inline ms-auto"
-            >
-              <FaRegArrowAltCircleLeft className="back-arrow" />
-            </button>
+          <div className="mx-auto w-100 card p-5 index-card-content-container">
+            <div className="indexCard-navigation-link mt-0">
+              <button
+                onClick={handleBackNavigate}
+                className="btn btn-light btn-sm w-25 d-inline ms-auto back-btn"
+              >
+                <FaRegArrowAltCircleLeft className="back-arrow" />{" "}
+                <span>Back</span>
+              </button>
+            </div>
 
-            <h1>{indexCardData.indexCard.title}</h1>
-            <p>{indexCardData.indexCard.description}</p>
+            <div className="indexCard-content">
+              <h1>{indexCardData.indexCard.title}</h1>
+              <p>{indexCardData.indexCard.description}</p>
+            </div>
 
-            <h5 className="mt-3">Confidence Level</h5>
-            <p className="small status-label">
-              <ConfidenceBadge
-                className="lead"
-                statusColor={statusColor}
-                indexCard={indexCardData.indexCard}
-              />
-            </p>
-
-            <SubjectInfo subject={indexCardData.indexCard.subject} />
+            <div className="indexCard-status-subject">
+              <div className="indexCard-status-container">
+                <h5 className="mt-2 small">Confidence Level</h5>
+                <p className="small status-label">
+                  <ConfidenceBadge
+                    className="lead"
+                    statusColor={statusColor}
+                    indexCard={indexCardData.indexCard}
+                  />
+                </p>
+              </div>
+              <SubjectInfo subject={indexCardData.indexCard.subject} />
+            </div>
 
             <div className="index-card-buttons">
               <UpdateIndexCardModal indexCard={indexCardData.indexCard} />
@@ -119,3 +111,5 @@ const IndexCard = ({ matchingIndexCards }) => {
 };
 
 export default IndexCard;
+
+
