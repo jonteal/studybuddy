@@ -18,7 +18,7 @@ const AccordionCard = ({ indexCard, index }) => {
   }, [indexCard.status]);
 
   return (
-    <div>
+    <div data-bs-toggle="collapse">
       <h2
         className="accordion-header"
         id={`panelsStayOpen-heading${cardOptions[index]}`}

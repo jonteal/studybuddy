@@ -72,7 +72,6 @@ const Subject = () => {
                 </div>
               </div>
             </button>
-            {flashCardMode && <button className="btn btn-outline-dark">Flip All Cards</button>}
           </div>
 
           <div className="card-container">

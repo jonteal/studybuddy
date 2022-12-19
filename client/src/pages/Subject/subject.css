@@ -25,9 +25,16 @@
   margin-bottom: 20px;
 }
 
-/* .accordion-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-} */
+@media screen and (max-width: 800px) {
+  .subject-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .actions-btns-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+  }
+}

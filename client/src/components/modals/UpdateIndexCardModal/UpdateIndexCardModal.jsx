@@ -1,4 +1,3 @@
-import React from "react";
 import EditIndexCardForm from "./../../EditIndexCardForm/EditIndexCardForm";
 
 const UpdateIndexCardModal = ({ indexCard }) => {

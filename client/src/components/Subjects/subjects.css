@@ -3,3 +3,11 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 800px) {
+  .subjects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

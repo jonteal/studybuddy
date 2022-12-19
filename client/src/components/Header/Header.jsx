@@ -1,6 +1,5 @@
 import React from 'react'
 import {FaBolt} from 'react-icons/fa';
-import Timer from '../Timer/Timer';
 
 import './header.css';
 
@@ -14,8 +13,6 @@ const Header = () => {
             <FaBolt className='text-danger' size='2em' />
           </div>
         </a>
-
-        <Timer />
       </div>
     </nav>
   )
