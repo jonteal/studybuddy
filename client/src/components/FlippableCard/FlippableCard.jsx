@@ -31,7 +31,7 @@ const FlippableCard = ({ indexCard }) => {
   }, [indexCard.status])
   return (
     <div className='flip-card' onClick={handleClick}>
-      <div className='flip-card-inner' onClick={handleClick}>
+      <div className={`flip-card-inner ${statusColor}`} onClick={handleClick}>
         <div className="flip-card-front">{indexCard.title}</div>
         <div className="flip-card-back">
           <div className="flippable-card-link-container">
