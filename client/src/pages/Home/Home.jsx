@@ -6,15 +6,16 @@ import Filter from "../../components/Filter/Filter";
 import "./home.css";
 
 const Home = () => {
-  
+
   return (
     <div>
       <div className="controls-container">
-        <div className="d-flex gap-3 mb-4">
+        <div className="add-modal-container d-flex gap-3 mb-4">
           <AddSubjectModal />
           <AddIndexCardModal />
         </div>
-        <Filter />
+
+
       </div>
       <Subjects />
     </div>

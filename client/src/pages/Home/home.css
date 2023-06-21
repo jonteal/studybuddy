@@ -18,10 +18,20 @@
   background-color: green;
 }
 
+.home-page-filter {
+  height: 2rem;
+  margin-bottom: 1.3rem;
+}
+
 @media screen and (max-width: 800px) {
   .controls-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .add-modal-container {
+    display: flex;
+    flex-direction: column;
   }
 }

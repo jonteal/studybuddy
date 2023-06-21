@@ -37,4 +37,11 @@
     justify-content: space-around;
     margin: 10px;
   }
+  .add-index-card-modal {
+    margin-bottom: 1rem;
+  }
+
+  .flash-card-toggle-btn {
+    margin-top: 0.5rem;
+  }
 }
