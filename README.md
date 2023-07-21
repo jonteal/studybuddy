@@ -26,3 +26,6 @@ Nice to haves - Future Development
 7. Add filtering on home page and on subject page to show only a certain confidence level
 8. Change all index cards in subject view to accordian view and change title background color to confidence level color
 9. Ability to flip all cards in flash card mode at once (with animation), or just flip individual ones (with animation)
+
+
+TEST
