@@ -29,7 +29,7 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri: "http://localhost:5001/graphql",
+  uri: "http://localhost:5080/graphql",
   cache,
 });
 
@@ -40,7 +40,7 @@ const App = () => {
     <div>
       <ApolloProvider client={client}>
         <Router>
-        <Header />
+          <Header />
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
