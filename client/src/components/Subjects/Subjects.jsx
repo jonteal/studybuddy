@@ -1,30 +1,42 @@
+import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_SUBJECTS } from "../../graphql/queries/subjectQueries";
 import SubjectRow from "../SubjectRow/SubjectRow";
 import Spinner from "../Spinner/Spinner";
+import { orderBy } from "lodash";
 
 import "./subjects.css";
-import { useState } from "react";
 
 const Subjects = () => {
   const { loading, error, data } = useQuery(GET_SUBJECTS);
   const [sortState, setSortState] = useState("-");
+  const [sortedSubjects, setSortedSubjects] = useState([data?.subjects]);
+
+  // let sortedSubjects = data?.subjects;
+
+  console.log("sortedSubjects", sortedSubjects);
+
+  useEffect(() => {
+    if (sortState === "ascending") {
+      setSortedSubjects(orderBy(data?.subjects, "name", "asc"));
+    } else if (sortState === "descending") {
+      setSortedSubjects(orderBy(data?.subjects, "name", "desc"));
+    }
+  }, [sortState]);
 
   if (loading) return <Spinner />;
 
   if (error) return <p>Something went wrong...</p>;
 
-  const sortMethods = {
-    none: { method: (a, b) => null },
-    ascending: { method: undefined },
-    descending: { method: (a, b) => (a > b ? -1 : 1) },
+  const handleSort = (e) => {
+    setSortState(e.target.value);
   };
 
   return (
     <div>
       <h4>Filter</h4>
       <select
-        onChange={(e) => setSortState(e.target.value)}
+        onChange={handleSort}
         defaultValue="default"
         className="home-page-filter"
       >
@@ -34,16 +46,9 @@ const Subjects = () => {
       </select>
       <h2>Subject</h2>
       {!loading && !error && (
-        // <div className="subjects-container">
-        //   {data.subjects
-        //     .sort(sortMethods[sortState].method)
-        //     .map((subject, i) => (
-        //       <SubjectRow key={subject.id} subject={subject} />
-        //     ))}
-        // </div>
         <div className="subjects-container">
-          {data.subjects.map((subject) => (
-            <SubjectRow key={subject.id} subject={subject} />
+          {sortedSubjects?.map((subject) => (
+            <SubjectRow key={subject?.id} subject={subject} />
           ))}
         </div>
       )}
