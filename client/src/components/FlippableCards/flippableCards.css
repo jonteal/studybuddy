@@ -1,7 +1,16 @@
 .flippable-card-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .flippable-card-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

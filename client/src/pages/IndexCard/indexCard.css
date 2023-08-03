@@ -22,9 +22,19 @@
 }
 
 .back-btn {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  background: #E9FFF9;
+  text-decoration: none;
+  color: #1D3354;
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 10px;
+  align-self: center;
+  border: 1px solid #1D3354;
 }
 
 .indexCard-content {

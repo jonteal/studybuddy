@@ -62,16 +62,16 @@ const IndexCard = ({ matchingIndexCards }) => {
     <div>
       {!indexCardLoading && !indexCardError && (
         <div className="index-card-main-container">
-          <a className="last-card-btn" href="/">
+          {/* <a className="last-card-btn" href="/">
             <FaAngleLeft />
-          </a>
+          </a> */}
           <div className="mx-auto w-100 card p-5 index-card-content-container">
             <div className="indexCard-navigation-link mt-0">
               <button
                 onClick={handleBackNavigate}
                 className="btn btn-light btn-sm w-25 d-inline ms-auto back-btn"
               >
-                <FaRegArrowAltCircleLeft className="back-arrow" />{" "}
+                {/* <FaRegArrowAltCircleLeft className="back-arrow" />{" "} */}
                 <span>Back</span>
               </button>
             </div>
@@ -101,9 +101,9 @@ const IndexCard = ({ matchingIndexCards }) => {
               <DeleteIndexCardButton indexCardId={indexCardData.indexCard.id} />
             </div>
           </div>
-          <a className="next-card-btn" href={"/"}>
+          {/* <a className="next-card-btn" href={"/"}>
             <FaAngleRight />
-          </a>
+          </a> */}
         </div>
       )}
     </div>
@@ -111,5 +111,3 @@ const IndexCard = ({ matchingIndexCards }) => {
 };
 
 export default IndexCard;
-
-

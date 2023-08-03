@@ -1,0 +1,29 @@
+.submit-btn {
+    background: #467599;
+    color: #E9FFF9;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 10px;
+    align-self: center;
+    border: 1px solid #1D3354;
+}
+
+.close-btn {
+    background: #E9FFF9;
+    color: #1D3354;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 10px;
+    align-self: center;
+    border: 1px solid #1D3354;
+}

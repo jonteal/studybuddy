@@ -41,16 +41,13 @@ const Subject = () => {
 
   return (
     <div>
-      <div className="subject-name-container">
-        <h1 className="subject-name">{subjectData.subject.name}</h1>
-      </div>
       <div className="back-btn-container">
-        <Link
-          to="/"
-          className="btn btn-light btn-sm w-25 d-inline ms-auto back-btn"
-        >
+        <Link to="/" className="btn-sm w-25 d-inline ms-auto back-btn">
           Back
         </Link>
+      </div>
+      <div className="subject-name-container">
+        <h1 className="subject-name">{subjectData.subject.name}</h1>
       </div>
       {!subjectLoading && !subjectError && (
         <div>
@@ -58,7 +55,7 @@ const Subject = () => {
             <AddIndexCardModal className="add-index-card-modal" />
             <button
               type="button"
-              className="btn btn-success flash-card-toggle-btn"
+              className="flash-card-toggle-btn"
               onClick={() => setFlashCardMode(!flashCardMode)}
             >
               <div className="d-flex align-items-center">
