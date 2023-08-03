@@ -11,6 +11,19 @@
   margin-top: 10px;
 }
 
+.subject-button {
+  background: #9ED8DB;
+  color: #1D3354;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.subject-button:hover {
+  background: #1D3354;
+  color: #E9FFF9;
+}
+
 .card-count-container {
   display: flex;
   flex-direction: row;
@@ -30,6 +43,18 @@
 
 .delete-subject-button {
   width: auto
+}
+
+.dropdown-menu,
+.delete-btn-list-item,
+.delete-btn {
+  background: #D64045;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #D64045;
+  color: white;
 }
 
 .delete-subject-dropdown {

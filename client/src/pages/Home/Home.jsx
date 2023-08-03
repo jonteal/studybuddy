@@ -4,18 +4,18 @@ import AddIndexCardModal from "../../components/modals/AddIndexCardModal/AddInde
 import Filter from "../../components/Filter/Filter";
 
 import "./home.css";
+import Timer from "../../components/Timer/components/Timer";
 
 const Home = () => {
-
   return (
-    <div>
+    <div className="home-main-container">
       <div className="controls-container">
         <div className="add-modal-container d-flex gap-3 mb-4">
           <AddSubjectModal />
           <AddIndexCardModal />
         </div>
 
-
+        {/* <Timer /> */}
       </div>
       <Subjects />
     </div>

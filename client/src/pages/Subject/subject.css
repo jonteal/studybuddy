@@ -25,6 +25,14 @@
   margin-bottom: 20px;
 }
 
+.back-btn {
+  margin-bottom: 2rem;
+}
+
+.back-btn-container {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 800px) {
   .subject-name-container {
     display: flex;

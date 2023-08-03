@@ -1,21 +1,20 @@
-import React from 'react'
-import {FaBolt} from 'react-icons/fa';
+import { FaPencilRuler } from "react-icons/fa";
 
-import './header.css';
+import "./header.css";
 
 const Header = () => {
   return (
-    <nav className='navbar bg-light mb-4 p-0'>
-      <div className='container'>
-        <a className='navbar-brand' href="/">
+    <nav className="navbar bg-light mb-4 p-0 main-nav">
+      <div className="container app-navbar">
+        <a className="navbar-brand" href="/">
           <div className="header">
-            <h2>Study Buddy</h2>
-            <FaBolt className='text-danger' size='2em' />
+            <h2 className="app-header">Study Buddy</h2>
+            <FaPencilRuler className="pencil-logo" size="1em" />
           </div>
         </a>
       </div>
     </nav>
-  )
+  );
 };
 
-export default Header
+export default Header;

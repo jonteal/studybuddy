@@ -2,9 +2,50 @@
   margin-left: 10px;
 }
 
+.add-subject-modal-btn {
+  background: #467599;
+  color: #E9FFF9;
+  height: 60px;
+  width: 200px;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  align-self: center;
+  border: 1px solid #1D3354;
+}
 
-@media screen and (max-width: 800px) {
+.icon {
+  color: #1D3354;
+  height: 1.2rem;
+}
+
+.submit-btn {
+  background: #467599;
+  color: #E9FFF9;
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 10px;
+  align-self: center;
+  border: 1px solid #1D3354;
+}
+
+
+@media screen and (max-width: 600px) {
   .add-subject-modal-btn {
-    width: 100%;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    align-self: center;
   }
 }

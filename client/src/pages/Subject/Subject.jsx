@@ -44,9 +44,14 @@ const Subject = () => {
       <div className="subject-name-container">
         <h1 className="subject-name">{subjectData.subject.name}</h1>
       </div>
-        <Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+      <div className="back-btn-container">
+        <Link
+          to="/"
+          className="btn btn-light btn-sm w-25 d-inline ms-auto back-btn"
+        >
           Back
         </Link>
+      </div>
       {!subjectLoading && !subjectError && (
         <div>
           <div className="actions-btns-container">

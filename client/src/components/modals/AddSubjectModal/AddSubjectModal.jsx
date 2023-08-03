@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import {FaBookReader} from 'react-icons/fa';
-import { useMutation } from '@apollo/client';
-import { ADD_SUBJECT } from '../../../graphql/mutations/subjectMutations';
-import { GET_SUBJECTS } from '../../../graphql/queries/subjectQueries';
+import { useState } from "react";
+import { FaBookReader } from "react-icons/fa";
+import { useMutation } from "@apollo/client";
+import { ADD_SUBJECT } from "../../../graphql/mutations/subjectMutations";
+import { GET_SUBJECTS } from "../../../graphql/queries/subjectQueries";
 
-import './addSubjectModal.css';
+import "./addSubjectModal.css";
 
 const AddSubjectModal = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const [addSubject] = useMutation(ADD_SUBJECT, {
     variables: { name },
@@ -24,26 +24,26 @@ const AddSubjectModal = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (name === '') {
-      return alert('Please fill in the subject name')
-    };
+    if (name === "") {
+      return alert("Please fill in the subject name");
+    }
 
     addSubject(name);
 
-    setName('');
-  }
+    setName("");
+  };
 
   return (
     <div>
       <button
         type="button"
-        className="btn btn-success add-subject-modal-btn"
+        className="add-subject-modal-btn"
         data-bs-toggle="modal"
         data-bs-target="#addSubjectModal"
       >
         <div className="d-flex align-items-center">
           <FaBookReader className="icon" />
-          <div className='add-subject-btn-label'>Add Subject</div>
+          <div className="add-subject-btn-label">Add Subject</div>
         </div>
       </button>
 
@@ -79,7 +79,7 @@ const AddSubjectModal = () => {
                   />
                 </div>
                 <button
-                  className="btn btn-success"
+                  className="submit-btn"
                   type="submit"
                   data-bs-dismiss="modal"
                 >
@@ -91,7 +91,7 @@ const AddSubjectModal = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddSubjectModal
+export default AddSubjectModal;

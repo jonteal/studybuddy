@@ -4,6 +4,13 @@
   justify-content: space-between;
 }
 
+.home-main-container {
+  border: 1px solid #1D3354;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
 .test-box {
   border: 1px solid green;
   width: 100%;

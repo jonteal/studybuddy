@@ -19,7 +19,7 @@ const SubjectRow = ({ subject }) => {
   return (
     <div className="subject-container">
       <div>
-        <a className="btn btn-light" href={`/subjects/${subject.id}`}>
+        <a className="subject-button" href={`/subjects/${subject.id}`}>
           {subject.name}
         </a>
       </div>
@@ -32,8 +32,11 @@ const SubjectRow = ({ subject }) => {
             aria-expanded="false"
           ></button>
           <ul className="dropdown-menu">
-            <li>
-              <button className="dropdown-item" onClick={deleteSubject}>
+            <li className="delete-btn-list-item">
+              <button
+                className="dropdown-item delete-btn"
+                onClick={deleteSubject}
+              >
                 Delete Subject
               </button>
             </li>

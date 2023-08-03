@@ -51,12 +51,12 @@ const AddIndexCardModal = () => {
         <>
           <button
             type="button"
-            className="btn btn-primary"
+            className="add-index-card-modal-btn"
             data-bs-toggle="modal"
             data-bs-target="#addIndexCardModal"
           >
             <div className="d-flex align-items-center">
-              <FaList/>
+              <FaList />
               <div className="add-index-btn-label">New Index Card</div>
             </div>
           </button>
@@ -130,7 +130,7 @@ const AddIndexCardModal = () => {
                     </div>
 
                     <button
-                      className="btn btn-primary"
+                      className="submit-btn"
                       type="submit"
                       data-bs-dismiss="modal"
                     >

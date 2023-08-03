@@ -14,15 +14,15 @@ const Subjects = () => {
 
   // let sortedSubjects = data?.subjects;
 
-  console.log("sortedSubjects", sortedSubjects);
+  // console.log("sortedSubjects", sortedSubjects);
 
-  useEffect(() => {
-    if (sortState === "ascending") {
-      setSortedSubjects(orderBy(data?.subjects, "name", "asc"));
-    } else if (sortState === "descending") {
-      setSortedSubjects(orderBy(data?.subjects, "name", "desc"));
-    }
-  }, [sortState]);
+  // useEffect(() => {
+  //   if (sortState === "ascending") {
+  //     setSortedSubjects(orderBy(data?.subjects, "name", "asc"));
+  //   } else if (sortState === "descending") {
+  //     setSortedSubjects(orderBy(data?.subjects, "name", "desc"));
+  //   }
+  // }, [sortState]);
 
   if (loading) return <Spinner />;
 
@@ -34,7 +34,7 @@ const Subjects = () => {
 
   return (
     <div>
-      <h4>Filter</h4>
+      {/* <h4>Filter</h4>
       <select
         onChange={handleSort}
         defaultValue="default"
@@ -43,11 +43,11 @@ const Subjects = () => {
         <option value="default">-</option>
         <option value="ascending">A-Z</option>
         <option value="descending">Z-A</option>
-      </select>
+      </select> */}
       <h2>Subject</h2>
       {!loading && !error && (
         <div className="subjects-container">
-          {sortedSubjects?.map((subject) => (
+          {data.subjects.map((subject) => (
             <SubjectRow key={subject?.id} subject={subject} />
           ))}
         </div>
