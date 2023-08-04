@@ -13,7 +13,7 @@ The purpose of this application is to provide a simple and fun tool for users to
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#test)
+- [Tests](#tests)
 - [Questions](#questions)
 - [Video](#video)
 - [Screenshots](#screenshots)
@@ -29,20 +29,39 @@ The purpose of this application is to provide a simple and fun tool for users to
 ```
 git clone https://github.com/jonteal/employee-tracker
 ```
-* Be sure that you are in the current working directory
-* Install the dependencies by opening the terminal and running
+* Be sure that you are in the root directory
+* Install the dependencies by opening the terminal and running the following node command. If you use something other than node, run the relevant substitute command to install dependencies
+* NOTE - Before running the application, you will need to hook up the server to a database. As this is a MERN application using Mongoose, you will need to use MongoDB unless you wish to refactor the schemas.
+* MongoDB Docs -> https://www.mongodb.com/docs/
 ```
 npm install
 ```
-* Run the project by typing the following command in the terminal:
+* From there, cd into the client folder
 ```
-node index.js
+cd client
 ```
+* Run the following command
+```
+npm install
+```
+* Initiate the client folder with the the command
+```
+npm run start
+```
+* Open another terminal with the previous one still running. cd into the server folder
+```
+cd server
+```
+* Run the command
+```
+npm run dev
+```
+* Now that both the server and the client folder are running, you should be able to open the browser at localhost:3000 and play with the application.
 
 <a name="usage"></a>
 
 ## Usage
-* In order to use the application, you will need to have a 
+* In order to use the application, you will simply follow the instructions in the modal forms after clicking on each button, and following the intuitive flow of the application from there. As it is a very simple tool, everything should be fairly straight forward.
 
 
 <a name="license"></a>
@@ -82,82 +101,49 @@ No tests available at this time.
 <a name="questions"></a>
 
 ## Questions
-If you have any questions or comments, please feel free to contact me by email at jonjacksonvibes@gmail.com!
+If you have any questions or comments, please feel free to contact me by email at jonjackson.webdesign@gmail.com!
 
 
 <a name="video"></a>
 
 ## Video
-https://drive.google.com/file/d/1Atc3PQ_L5z0A5gesrnX-7wwA-5KB67cz/view
+https://github.com/jonteal/studybuddy/assets/87287862/c665b62e-9bc9-48c1-96d2-5dee1cab1fc8
+
+
 
 <a name="screenshots"></a>
 
 ## Screenshots
+<img width="959" alt="Screenshot 2023-08-03 at 5 02 06 PM" src="https://github.com/jonteal/studybuddy/assets/87287862/a5c74566-a8b8-4aaa-8d4b-6e3f9faa02f6">
 
-![Screenshot of Viewed Tables](/employee-tracker/Assets/myScreenshot1.png)
-![Screenshot of Sample Added Dept, Role, and Employee](/employee-tracker/Assets/myScreenshot2.png)
+<img width="1167" alt="Screenshot 2023-08-03 at 8 56 14 PM" src="https://github.com/jonteal/studybuddy/assets/87287862/7c28c27a-f7b3-4b5b-b0e4-0f4bbe3dfabd">
+
+<img width="1146" alt="Screenshot 2023-08-03 at 8 56 33 PM" src="https://github.com/jonteal/studybuddy/assets/87287862/4ffb1a9b-b7c6-4333-897d-8616bde51414">
+
+<img width="1150" alt="Screenshot 2023-08-03 at 8 57 01 PM" src="https://github.com/jonteal/studybuddy/assets/87287862/daa0fb99-a163-4a22-be5f-1dcc73df2cf0">
 
 
 <a name="links"></a>
 
 ## Links
-Github Repository: https://github.com/jonteal/employee-tracker
+Github Repository: https://github.com/jonteal/studybuddy
 
 
 <a name="credits"></a>
 
 ## Resources / Credits
-This project was authored by Jon Jackson but was given guidance for implementation and logic by fellow cohort member Laurel Thornburn. 
+This project was architected, designed, and developed by Jon Jackson.
 
 
-
-## Bonus [In Progress]
+## Future Development
 
 Try to add some additional functionality to your application, such as the ability to do the following:
 
-* Update employee managers.
+* Incorporate a timer feature so the user can set a window of time they would like to study for.
+* Keep track of how much time a user studies per week to help them know how much time they've put into their studies.
+* Add index card count in the subject button label
+* Add redux to handle state management
+* Update card count in subject row component
+* Add filtering on home page and on subject page to show only a certain confidence level
+* Ability to flip all cards in flash card mode at once (with animation), or just flip individual ones (with animation)
 
-* View employees by manager.
-
-* View employees by department.
-
-* Delete departments, roles, and employees.
-
-* View the total utilized budget of a department&mdash;in other words, the combined salaries of all employees in that department.
-
-
-
-
-
-
-# Study Buddy
-
-The purpose of this app is to create an application where a user can add content in a manner that will help them study and retain information so as to better prepare them for tests. 
-
-As a student 
-I want an application that allows me to save information that I must remember
-So that I can increase my retention and improve my testing scores and capabilities. 
-
-Acceptance Criteria
-
-Basic Overview and App Needs
-1. App that allows the user to save study information on digital index cards so they can study for their exams.
-2. Ability to mark a note with a status - 'No clue', 'Somewhat got', 'In the bag'
-3. Color coding the index cards status tag according to the status. No clue = 'red', Somewhat get = 'yellow', In the bag = 'green'.
-4. Have a page dedicated to the subject which contains all the index cards for that subject.
-5. Back button while on index card should navigate to previous page instead of always back to home.
-6. Make updating the card a modal option instead of a form that always displays below the content
-
-Nice to haves - Future Development
-1. Potentially incorporate a timer feature so the user can set a window of time they would like to study for.
-2. Keep track of how much time a user studies per week to help them know how much time they've put into their studies.
-3. Add index card count in the subject button label
-4. Make cards draggable so they can be organized in the way the user would like.
-5. Add redux to handle state management
-6. Update card count in subject row component 
-7. Add filtering on home page and on subject page to show only a certain confidence level
-8. Change all index cards in subject view to accordian view and change title background color to confidence level color
-9. Ability to flip all cards in flash card mode at once (with animation), or just flip individual ones (with animation)
-
-
-TEST
