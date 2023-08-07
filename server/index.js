@@ -13,7 +13,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: ["studybuddy-frontend.vercel.app"],
+    origin: ["https://studybuddy-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
