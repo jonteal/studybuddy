@@ -27,7 +27,7 @@ The purpose of this application is to provide a simple and fun tool for users to
 * Clone the repository using:
 
 ```
-git clone https://github.com/jonteal/employee-tracker
+git clone https://github.com/jonteal/studybuddy
 ```
 * Be sure that you are in the root directory
 * Install the dependencies by opening the terminal and running the following node command. If you use something other than node, run the relevant substitute command to install dependencies
