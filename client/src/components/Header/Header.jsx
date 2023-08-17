@@ -4,7 +4,7 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <nav className="navbar bg-light mb-4 p-0 main-nav">
+    <nav className="navbar mb-4 p-0 main-nav">
       <div className="container app-navbar">
         <a className="navbar-brand" href="/">
           <div className="header">

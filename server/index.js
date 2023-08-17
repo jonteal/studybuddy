@@ -11,13 +11,15 @@ const app = express();
 
 connectDB();
 
-app.use(
-  cors({
-    origin: ["https://studybuddy-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://studybuddy-frontend.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 app.use(
   "/graphql",

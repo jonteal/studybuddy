@@ -3,21 +3,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: #E9FFF9;
+  background: white;
 }
 
 .app-header {
   margin-right: 15px;
-  background: #E9FFF9;
+  background: white;
 }
 
 .main-nav {
   width: 100%;
-  background: #E9FFF9;
+  background: white;
 }
 
 .app-navbar {
-  background: #E9FFF9;
+  background: white;
   width: 100%;
 }
 
